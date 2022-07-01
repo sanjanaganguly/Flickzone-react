@@ -3,7 +3,6 @@ import React from "react";
 const ListGroup = (props) => {
   const { items, selectedItem, onItemSelect } = props;
   //by assigning textProperty and valueProperty we are not tightly coupled to the fakeGenreService. we can have any property from any service
-  console.log(selectedItem);
   return (
     <ul className="list-group">
       {items.map((item) => (

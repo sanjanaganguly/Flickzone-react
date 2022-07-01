@@ -34,7 +34,7 @@ class Movies extends Component {
     movies[index].liked = !movies[index].liked;
     this.setState({ movies });
   };
-  f;
+
   handleSort = (sortColumn) => {
     this.setState({ sortColumn });
   };
