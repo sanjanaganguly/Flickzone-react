@@ -8,13 +8,20 @@ class MoviesTable extends React.Component {
     { path: "title", label: "Title" },
     { path: "genre.name", label: "Genre" },
     { path: "numberInStock", label: "Stock" },
-    { path: "dailyRentalRate", label: "Rate" }
-    // { key: "like" },
-    // { key: "delete" },
+    { path: "dailyRentalRate", label: "Rate" },
+    { key: "like", content: movie => (<Like liked={movie.liked} onLikeToggled={() => this.props.onLike(movie)} />) },
+    {
+      key: "delete", content: movie => (<button
+        onClick={() => this.props.onDelete(movie)}
+        className="btn btn-danger btn-sm"
+      >
+        Delete
+      </button>)
+    },
   ];
 
   render() {
-    const { movies, onLike, onDelete, onSort, sortColumn } = this.props;
+    const { movies, onSort, sortColumn } = this.props;
     return (
       <table className="table">
         <TableHeader
@@ -24,8 +31,8 @@ class MoviesTable extends React.Component {
         />
         <TableBody
           data={movies}
-          columns={this.columns} 
-          />
+          columns={this.columns}
+        />
 
         {/* <tbody>
           {movies.map((movie) => (
