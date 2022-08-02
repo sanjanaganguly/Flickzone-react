@@ -5,7 +5,7 @@ import TableBody from './tableBody';
 // const Table = props => {
 //     const {columns, sortColumn, onSort, data } = props;
 
-//Alternative using destructuring:
+//Alternative way using destructuring:
 
 const Table = ({ columns, sortColumn, onSort, data }) => {
     return (
